@@ -32,12 +32,17 @@ namespace GeekGuestbook2.Controllers
         [HttpPost]
         public ActionResult Create(Message message)
         {
-            message.Created = DateTime.Now;
+            if (ModelState.IsValid)
+            {
+                message.Created = DateTime.Now;
 
-            _entities.Messages.Add(message);
-            _entities.SaveChanges();
+                _entities.Messages.Add(message);
+                _entities.SaveChanges();
 
-            return RedirectToAction("");
+                return RedirectToAction("");
+            }
+
+            return View();
         }
 	}
 }

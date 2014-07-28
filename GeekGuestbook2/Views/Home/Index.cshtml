@@ -20,11 +20,12 @@
             <h2>@Html.DisplayFor(modelItem => item.Header)</h2>
             <p>@Html.DisplayFor(modelItem => item.Body)</p>
             <p><a href="mailto:@Html.DisplayFor(modelItem => item.Email)">@Html.DisplayFor(modelItem => item.Name)</a> - @item.Created.Date.ToShortDateString()</p>
+            @Html.ActionLink("Delete", "Delete", new { id = item.MessageId })
         </article>      
             @*
                 @Html.ActionLink("Edit", "Edit", new { id=item.MessageId }) |
                 @Html.ActionLink("Details", "Details", new { id=item.MessageId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.MessageId })
+                
             *@
     }
 </body>

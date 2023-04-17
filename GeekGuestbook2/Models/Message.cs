@@ -11,19 +11,13 @@ namespace GeekGuestbook2.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Message
     {
         public int MessageId { get; set; }
         public System.DateTime Created { get; set; }
-
-        [Required]
         public string Header { get; set; }
-
-        [Required]
         public string Body { get; set; }
-
         public string Name { get; set; }
         public string Email { get; set; }
     }
